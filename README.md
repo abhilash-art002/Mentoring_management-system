@@ -10,7 +10,7 @@ This project is a **Mentoring Management System** designed to streamline the man
 * When the application runs **for the first time**, a **default Admin user** is automatically created.
 * **Email:** `admin@gmail.com`
 * **Password:** `admin`
-* *(Note: For demo purposes only. Passwords should be encrypted in production.)*
+
 
 ---
 
