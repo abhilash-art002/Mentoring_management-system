@@ -1,0 +1,12 @@
+<div class="card-container">
+  <h2>Mentors</h2>
+
+  <div class="card" style="width: 15rem; height: 25em" *ngFor="let mentor of mentors">
+    <img style="height: 20rem;" [src]="getProfileImage(mentor.profileImage)" class="card-img-top" alt="mentor image">
+    <div class="card-body">
+      <h5 class="card-title">{{ mentor.name }}</h5>
+      <p class="card-text">{{ mentor.email }}</p>
+      <a href="#" class="btn btn-primary">View Profile</a>
+    </div>
+  </div>
+</div>

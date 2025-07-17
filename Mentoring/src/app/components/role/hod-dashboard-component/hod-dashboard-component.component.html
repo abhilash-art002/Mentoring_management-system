@@ -1,0 +1,30 @@
+<div class="dashboard">
+  <h1>Welcome, {{ user.name }}!</h1>
+  <p>You are logged in as a <strong>{{ user.role }}</strong>.</p>
+
+  <div class="profile-header">
+    <img [src]="getProfileImage()" alt="Profile" class="profile-img-big" />
+    <button (click)="showEdit = !showEdit" class="edit-btn">🖉 Edit</button>
+  </div>
+
+  <div *ngIf="showEdit" class="edit-photo">
+    <label class="custom-file-upload">
+      <input type="file" (change)="onFileSelected($event)" />
+      📁 Choose from Computer
+    </label>
+
+    <div class="default-images">
+      <p>Or choose from default:</p>
+      <div class="default-image-list">
+        <img *ngFor="let img of defaultImages"
+             [src]="'../../../../assets/img/mentors/' + img"
+             (click)="selectDefaultImage(img)"
+             [class.selected]="selectedDefaultImage === img" />
+      </div>
+    </div>
+
+    <button (click)="handleImageSubmit()">Apply Image</button>
+  </div>
+
+  <app-hod-student-manager></app-hod-student-manager>
+</div>

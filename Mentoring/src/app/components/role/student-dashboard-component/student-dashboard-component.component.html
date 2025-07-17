@@ -1,0 +1,38 @@
+<div class="dashboard">
+  <div class="student-profile-wrapper">
+    <div class="student-profile">
+      <div class="profile-header">
+        <img [src]="getProfileImage()" alt="Profile" class="profile-img-big" />
+        <div class="student-info">
+          <h1>{{ user.name }}</h1>
+          <p><strong>{{ user.role }}</strong></p>
+          <button (click)="showEdit = !showEdit" class="edit-btn">🖉 Edit</button>
+        </div>
+      </div>
+
+      <div *ngIf="showEdit" class="edit-photo">
+        <div class="image-upload-options">
+          <label class="custom-file-upload">
+            <input type="file" (change)="onFileSelected($event)" />
+            📁 Choose from Computer
+          </label>
+
+          <div class="default-images">
+            <p>Or choose from default:</p>
+            <div class="default-image-list">
+              <img *ngFor="let img of defaultImages"
+                   [src]="'../../../../assets/img/mentors/' + img"
+                   (click)="selectDefaultImage(img)"
+                   [class.selected]="selectedDefaultImage === img" />
+            </div>
+            <button (click)="handleImageSubmit()">Apply Image</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-student-course-selector></app-student-course-selector>
+  <h2>Communicate With Mentor</h2>
+  <app-communicate [userId]="studentId" [otherId]="mentorId"></app-communicate>
+</div>

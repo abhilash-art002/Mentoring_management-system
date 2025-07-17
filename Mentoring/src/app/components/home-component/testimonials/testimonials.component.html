@@ -1,0 +1,8 @@
+<div class="mentoring-section">
+  <div class="image-card" *ngFor="let activity of activities">
+    <img [src]="activity.img" [alt]="activity.title" />
+    <div class="overlay">
+      <h3>{{ activity.title }}</h3>
+    </div>
+  </div>
+</div>

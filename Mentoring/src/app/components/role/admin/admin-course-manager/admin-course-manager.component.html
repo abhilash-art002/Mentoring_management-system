@@ -1,0 +1,32 @@
+<div class="admin-panel">
+  <h2>Manage Courses</h2>
+
+  <input type="text" [(ngModel)]="newCourseName" placeholder="New Course Name">
+  <button (click)="addCourse()">Add Course</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Course Name</th>
+        <th>HOD</th>
+        <th>Assign / Remove</th>
+      </tr>
+    </thead>
+   <tbody>
+  <tr *ngFor="let course of courses">
+    <td>{{ course.id }}</td>
+    <td>{{ course.name }}</td>
+    <td>{{ course.hod?.name || 'None' }}</td>
+    <td>
+      <select [(ngModel)]="course.selectedHodId">
+        <option *ngFor="let hod of hods" [value]="hod.id">{{ hod.name }}</option>
+      </select>
+      <button style="background-color: rgb(43, 181, 43);"  (click)="assignHod(course.id, course.selectedHodId)">Assign</button>
+      <button style="background-color: red;"  (click)="removeHod(course.id)">Remove</button>
+    </td>
+  </tr>
+</tbody>
+
+  </table>
+</div>

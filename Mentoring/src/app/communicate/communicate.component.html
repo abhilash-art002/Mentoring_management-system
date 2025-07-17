@@ -1,0 +1,41 @@
+<div class="chat-box">
+  <div class="chat-user">
+    <p>Messages</p>
+  </div>
+
+  <div class="chat-msg">
+    <ng-container *ngFor="let group of groupedMessages | keyvalue">
+      <div class="msg-date">
+        <span>{{ group.key }}</span>
+      </div>
+
+      <ng-container *ngFor="let msg of group.value">
+        <div class="msg-wrapper" [ngClass]="msg.sender.id === userId ? 's-msg' : 'r-msg'">
+          <div class="msg-content" [ngClass]="{
+            'announcement-msg': msg.type === 'COURSE_ANNOUNCEMENT'
+          }">
+            <img
+              [src]="msg.sender.profileImage ? 'http://localhost:8080/images/' + msg.sender.profileImage : 'assets/img/default.jpg'"
+              alt="Profile"
+              class="profile-img"
+            />
+            <div class="text-content">
+              <p class="msg">{{ msg.content }}</p>
+              <p *ngIf="msg.type === 'COURSE_ANNOUNCEMENT'" class="announcement-label">
+                📢 Course-wide announcement
+              </p>
+              <p class="time">{{ msg.timestamp | date: 'shortTime' }}</p>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+
+    <div #scrollAnchor></div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" [(ngModel)]="newMessage" placeholder="Type your message..." />
+    <img src="../../assets/img/send_button.png" alt="send" (click)="sendMessage()" />
+  </div>
+</div>

@@ -1,0 +1,115 @@
+.dashboard {
+  text-align: center;
+  margin-top: 50px;
+  color: #333;
+}
+.dashboard h1 {
+  font-size: 36px;
+  color: #0ead38;
+}
+.dashboard p {
+  font-size: 18px;
+}
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.profile-img-big {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.default-image-list img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+.default-image-list img.selected {
+  border-color: #007bff;
+}
+.edit-photo {
+  margin-top: 20px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #e5f5e9; 
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+.edit-photo:hover{
+  background: #d4f7e0;  
+}
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #19ba44;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.custom-file-upload:hover {
+  background-color: #5e68d6;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+
+.default-images p {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.default-image-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.default-image-list img {
+  border-radius: 8px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.default-image-list img:hover {
+  transform: scale(1.05);
+}
+
+.default-image-list img.selected {
+  border-color: #2fc12f;
+  box-shadow: 0 0 8px rgba(39, 176, 119, 0.6);
+}
+
+.edit-photo button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.edit-photo button:hover {
+  background-color: #5e68d6;
+}

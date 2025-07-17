@@ -1,0 +1,11 @@
+.dashboard {
+  text-align: center;
+  padding: 60px;
+  background: linear-gradient(to right, #232526, #414345);
+  color: #fff;
+  border-radius: 8px;
+}
+h1 {
+  font-size: 2rem;
+  color: #ffa726;
+}

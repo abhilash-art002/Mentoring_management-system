@@ -1,0 +1,60 @@
+<!-- 🔍 Zoom Controls -->
+<div class="zoom-controls">
+  <button (click)="zoomIn()">➕</button>
+  <button (click)="zoomOut()">➖</button>
+  <button (click)="resetZoom()">🔁</button>
+</div>
+
+<ngx-graph
+  [links]="edges"
+  [nodes]="nodes"
+  [layout]="layout"
+  [curve]="curve"
+  [update$]="update$"
+  
+  (nodeClick)="onNodeClick($event)"
+  class="chart-container"
+>
+  <!-- SVG Definitions -->
+  <ng-template #defsTemplate>
+    <svg:clipPath id="circleClip">
+      <svg:circle r="30" cx="30" cy="30"></svg:circle>
+    </svg:clipPath>
+    <svg:marker
+      id="arrow"
+      viewBox="0 0 10 10"
+      refX="9"
+      refY="5"
+      markerWidth="6"
+      markerHeight="6"
+      orient="auto-start-reverse"
+    >
+      <svg:path d="M 0 0 L 10 5 L 0 10 z"></svg:path>
+    </svg:marker>
+  </ng-template>
+
+  <!-- Node Template -->
+  <ng-template #nodeTemplate let-node>
+    <svg:g class="custom-node">
+      <svg:circle r="32" [attr.fill]="node.data.color" stroke="#fff" stroke-width="2"></svg:circle>
+      <svg:image
+        [attr.xlink:href]="node.data.avatar"
+        [attr.width]="60"
+        [attr.height]="60"
+        [attr.x]="-30"
+        [attr.y]="-30"
+        clip-path="url(#circleClip)"
+      ></svg:image>
+      <svg:text y="45" text-anchor="middle">{{ node.label }}</svg:text>
+    </svg:g>
+  </ng-template>
+</ngx-graph>
+
+<!-- Pop-up on node click -->
+<div *ngIf="selectedNode" class="node-details">
+  <h3>{{ selectedNode.name }}</h3>
+  <div class="tag role">{{ selectedNode.role }}</div>
+  <div class="tag email">{{ selectedNode.email }}</div>
+  <div *ngIf="selectedNode.course" class="tag course">{{ selectedNode.course }}</div>
+  <button (click)="selectedNode = null">✖ Close</button>
+</div>

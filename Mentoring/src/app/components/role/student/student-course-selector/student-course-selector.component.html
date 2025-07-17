@@ -1,0 +1,34 @@
+<div class="container">
+  
+  <button class="toggle-btn" (click)="showCourses = !showCourses">
+    {{ showCourses ? 'Select Course👆' : 'Select Course👇' }}
+  </button>
+
+  <div *ngIf="showCourses" class="course-list">  
+    <div class="course-card" *ngFor="let course of courses">
+      <img [src]="'../../../../../assets/img/course-' + course.id + '.jpg'" alt="{{ course.name }}">
+      <h3>{{ course.name }}</h3>
+
+      <button (click)="toggleDetails(course.id)">Details</button>
+
+      <div *ngIf="selectedCourseId === course.id" class="course-details">
+          <p style="color: rgb(3, 88, 60); ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab iure nihil laudantium deserunt vel veniam quas !!</p>
+        <p><strong>HOD:</strong> {{ course.hod.name }}</p>
+        <p><strong>Contact:</strong> {{ course.hod.email }}</p>
+        <button (click)="confirmChoice(course.id)">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- After course is assigned -->
+<div *ngIf="studentDetails?.course" class="student-info">
+  <h2>Your Assigned Details</h2>
+  <table class="info-table">
+    <tr><th>Course</th><td>{{ studentDetails.course.name }}</td></tr>
+    <tr><th>HOD</th><td>{{ studentDetails.hod?.name || 'Not Assigned' }}</td></tr>
+    <tr><th>Mentor</th><td>{{ studentDetails.mentor?.name || 'Not Assigned' }}</td></tr>
+  </table>
+</div>

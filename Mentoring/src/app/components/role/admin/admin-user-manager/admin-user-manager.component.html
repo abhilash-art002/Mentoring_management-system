@@ -1,0 +1,44 @@
+<div class="admin-user-panel">
+  <h2>Manage Users</h2>
+
+  <button (click)="showMentors()">View Mentors</button>
+  <button (click)="showStudents()">View Students</button>
+
+  <div *ngIf="viewType === 'mentors'">
+    <h3>All Mentors</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Name</th><th>Email</th><th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mentor of mentors">
+          <td>{{ mentor.id }}</td>
+          <td>{{ mentor.name }}</td>
+          <td>{{ mentor.email }}</td>
+          <td>{{ mentor.role }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="viewType === 'students'">
+    <h3>All Students</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Name</th><th>Email</th><th>Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td>{{ student.id }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.email }}</td>
+          <td>{{ student.role }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

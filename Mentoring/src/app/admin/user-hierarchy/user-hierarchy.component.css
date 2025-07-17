@@ -1,0 +1,149 @@
+.chart-container {
+  height: 100vh;
+  width: 100%;
+  background: #f9fcff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  overflow: auto;
+}
+
+/* ngx-graph container */
+::ng-deep ngx-graph {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+/* Node Styling */
+::ng-deep .custom-node {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+::ng-deep .custom-node:hover {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 6px #478ed1aa);
+}
+
+::ng-deep .custom-node text {
+  fill: #333;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+::ng-deep .custom-node image {
+  clip-path: circle(30px at center);
+  border-radius: 50%;
+}
+
+/* Edge Styling */
+::ng-deep .edge path {
+  stroke: #478ed1;
+  stroke-width: 2;
+  marker-end: url(#arrow);
+  fill: none;
+  animation: dash 2s linear infinite;
+  stroke-dasharray: 5;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 20;
+  }
+}
+
+/* Zoom Controls */
+.zoom-controls {
+  text-align: right;
+  margin: 10px 20px;
+}
+
+.zoom-controls button {
+  background: #478ed1;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  margin-left: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.zoom-controls button:hover {
+  background: #0d47a1;
+}
+
+/* Node Details Panel */
+::ng-deep .node-details {
+  position: absolute;
+  top: 120px;
+  right: 40px;
+  padding: 20px;
+  width: 280px;
+  background: #fff;
+  border-left: 6px solid #478ed1;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', sans-serif;
+  z-index: 99;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+::ng-deep .node-details h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0da126;
+}
+
+::ng-deep .node-details button {
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: #478ed1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Tag Styling */
+::ng-deep .node-details .tag {
+  display: inline-block;
+  padding: 6px 10px;
+  margin: 4px 2px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+::ng-deep .tag.role {
+  background: #ffe0e0;
+  color: #c62828;
+}
+
+::ng-deep .tag.email {
+  background: #ede7f6;
+  color: #5e35b1;
+}
+
+::ng-deep .tag.course {
+  background: #e8f5e9;
+  color: #2e7d32;
+}

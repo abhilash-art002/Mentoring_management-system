@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <div class="logo">
+    <img src="../../../assets/img/apple-touch-icon.png" alt="">
+   BrillianceHub
+  </div>
+  <ul class="nav-links">
+    <li><a routerLink="/">Home</a></li>   
+    <li><a routerLink="/auth">Login</a></li>
+    <li><a routerLink="/about">About</a></li>
+    <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
+    
+  </ul>
+</nav>

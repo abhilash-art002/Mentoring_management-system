@@ -1,0 +1,100 @@
+
+<div class="dashboard">
+  
+<div class="mentor-profile">
+  <div class="profile-header">
+  <img [src]="getProfileImage()" alt="Profile" class="profile-img-big" />
+  <div class="mentor-info">
+    <h1> {{ user.name }}</h1>
+<p><strong>{{ user.role }}</strong>.</p>
+    <button (click)="showEdit = !showEdit" class="edit-btn">🖉 Edit</button>
+  </div>
+</div>
+
+<div *ngIf="showEdit" class="edit-photo">
+<div class="image-upload-options">
+  <label class="custom-file-upload">
+    <input type="file" (change)="onFileSelected($event)" />
+    📁 Choose from Computer
+  </label>
+
+  <div class="default-images">
+    <p>Or choose from default:</p>
+    <div class="default-image-list">
+      <img *ngFor="let img of defaultImages"
+           [src]="'../../../../assets/img/mentors/' + img"
+           (click)="selectDefaultImage(img)"
+           [class.selected]="selectedDefaultImage === img" />
+    </div>
+   <button class="apply-btn" (click)="handleImageSubmit()">Apply Image</button>
+
+    
+  </div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- <h2>Your Students</h2> -->
+<!-- <table>
+  <tr>
+    <th>Name</th><th>Email</th><th>Actions</th>
+  </tr>
+  <tr *ngFor="let student of students">
+    <td>{{ student.name }}</td>
+    <td>{{ student.email }}</td>
+    <td><button (click)="selectStudent(student)">Communicate</button></td>
+  </tr>
+</table> -->
+
+<!-- <app-communicate 
+  *ngIf="selectedStudent" 
+  [userId]="mentorId" 
+  [otherId]="selectedStudent.id"
+  [attr.key]="selectedStudent.id">
+</app-communicate> -->
+<!-- Toggle Button -->
+ <div class="btn-continer">
+
+  <button (click)="toggleCourseView()" class="toggle-btn">
+  {{ showCourseWise ? 'Hide Students by Course' : 'Show Students by Course' }}
+</button>
+ </div>
+
+
+<!-- Course-wise Students Section -->
+<div class="course-wise" *ngIf="showCourseWise">
+  <div *ngFor="let group of groupedByCourse | keyvalue" class="course-group">
+    <h3 class="course-title">{{ group.key }}</h3>
+
+     <!-- 🔵 COMMON MESSAGE BOX -->
+  <div class="common-message-box">
+    <textarea [(ngModel)]="courseMessages[group.key]" placeholder="Type course-wide message..."></textarea>
+    <button (click)="sendCourseMessage(group.key)">Send to All</button>
+  </div>
+
+    <div class="student-cards">
+      <div class="student-card" *ngFor="let student of group.value">
+        <img [src]="getStudentImage(student)" alt="Profile" class="student-img" />
+        <div class="student-details">
+          <h4>{{ student.name }}</h4>
+          <p>{{ student.email }}</p>
+          <button (click)="selectStudent(student)">Chat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="comm-box" *ngIf="selectedStudent">
+  <app-communicate 
+    [userId]="mentorId" 
+    [otherId]="selectedStudent.id"
+    [attr.key]="selectedStudent.id">
+  </app-communicate>
+</div>
+
+
