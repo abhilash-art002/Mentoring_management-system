@@ -1,7 +1,6 @@
-Here Mentoring Folder was Frontend Folder in Angular
-and Mentoring_Management Folder was springboot 
-<img width="1024" height="1536" alt="ChatGPT Image Jul 17, 2025, 09_54_13 AM" src="https://github.com/user-attachments/assets/c7f63db6-6bec-4934-b987-2215bbd16527" />
+## Here Mentoring Folder was Frontend Folder in Angular and Mentoring_Management Folder was backend in springboot 
 
+<img width="1024" height="1536" alt="ChatGPT Image Jul 17, 2025, 09_54_13 AM" src="https://github.com/user-attachments/assets/c7f63db6-6bec-4934-b987-2215bbd16527" />
 ## 📘 Project Workflow Overview
 This project is a **Mentoring Management System** designed to streamline the management of students, mentors, HODs, and courses within an academic institution. Below is a detailed step-by-step explanation of how the system works:
 
@@ -66,8 +65,14 @@ This project is a **Mentoring Management System** designed to streamline the man
 <img width="1919" height="873" alt="Screenshot 2025-07-16 172540" src="https://github.com/user-attachments/assets/038c40d6-5080-46e3-8eaa-e2a33c1661fd" />
 <img width="1919" height="885" alt="Screenshot 2025-07-16 172708" src="https://github.com/user-attachments/assets/3f974fc8-bd0b-437f-9820-e55388555b3f" />
 https://github.com/user-attachments/assets/3e107df6-fe07-4f98-a1e3-91929440b8eb
+
+
 https://github.com/user-attachments/assets/b3413db9-39b3-4261-bbc9-06ab2af41a1f
+
+
 https://github.com/user-attachments/assets/6d10bb70-bf0c-43cb-8b60-7fcd92d6603c
+
+
 https://github.com/user-attachments/assets/814e36c7-226a-4a5f-9a63-0d5be257f837
 
 
