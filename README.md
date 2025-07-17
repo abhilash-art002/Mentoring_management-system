@@ -1,4 +1,5 @@
-## Here Mentoring Folder was Frontend Folder in Angular and Mentoring_Management Folder was backend in springboot 
+## Mentoring Folder--> Frontend  in Angular 
+## Mentoring_Management Folder -- backend in springboot 
 
 <img width="1024" height="1536" alt="ChatGPT Image Jul 17, 2025, 09_54_13 AM" src="https://github.com/user-attachments/assets/c7f63db6-6bec-4934-b987-2215bbd16527" />
 ## 📘 Project Workflow Overview
@@ -64,6 +65,8 @@ This project is a **Mentoring Management System** designed to streamline the man
 <img width="1919" height="604" alt="Screenshot 2025-07-16 172515" src="https://github.com/user-attachments/assets/fa1e3082-fa96-4233-b266-7cd09c11ef15" />
 <img width="1919" height="873" alt="Screenshot 2025-07-16 172540" src="https://github.com/user-attachments/assets/038c40d6-5080-46e3-8eaa-e2a33c1661fd" />
 <img width="1919" height="885" alt="Screenshot 2025-07-16 172708" src="https://github.com/user-attachments/assets/3f974fc8-bd0b-437f-9820-e55388555b3f" />
+
+
 https://github.com/user-attachments/assets/3e107df6-fe07-4f98-a1e3-91929440b8eb
 
 
