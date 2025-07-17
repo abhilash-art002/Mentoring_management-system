@@ -60,7 +60,6 @@ This project is a **Mentoring Management System** designed to streamline the man
   * Both student and mentor can **log in to their respective dashboards**.
   * They can **communicate** or **share updates** through a dedicated communication page (e.g., chat or message system).
 
-<img width="1671" height="812" alt="Screenshot 2025-07-16 154124" src="https://github.com/user-attachments/assets/87c37385-0f77-4458-98ff-a3c1a12a7d19" />
 <img width="1897" height="832" alt="Screenshot 2025-07-16 172455" src="https://github.com/user-attachments/assets/e9c9b3af-3d0b-43be-948c-9af3e78ca206" />
 <img width="1919" height="604" alt="Screenshot 2025-07-16 172515" src="https://github.com/user-attachments/assets/fa1e3082-fa96-4233-b266-7cd09c11ef15" />
 <img width="1919" height="873" alt="Screenshot 2025-07-16 172540" src="https://github.com/user-attachments/assets/038c40d6-5080-46e3-8eaa-e2a33c1661fd" />
